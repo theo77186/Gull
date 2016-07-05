@@ -15,7 +15,7 @@ gull.syzygy.linux:
 	rm -f *.gcda
 	$(CC) $(CFLAGS) -fprofile-generate -D LINUX -D TB Gull.cpp tbprobe.c -o Gull
 	./Gull bench 16 "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
-	$(CC) $(CFLAGS) -fprofile-use -fno-peel-loops -fno-tracer -D LINUX -D TB -D HNI Gull.cpp tbprobe.c -o Gull
+	$(CC) $(CFLAGS) -fprofile-use -fno-peel-loops -fno-tracer -D LINUX -D TB Gull.cpp tbprobe.c -o Gull
 	$(STRIP) Gull
 	cp Gull Gull.syzygy.linux
 
